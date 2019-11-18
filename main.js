@@ -1,34 +1,37 @@
 // alert('prova');
 
 var listaCognomi = ['Agrigento','Trapani','Palermo','Caltanissetta'];
-// var newLista = listaCognomi.toUpperCase();
-// return listaCognomi.toLowerCase();
+// var newList = listaCognomi.toUpperCase();
 console.log(listaCognomi);
 // Chiedi all’utente il cognome
 var cognomeUtente = prompt('Inserisci il tuo cognome (es. Rossi):');
-// return cognomeUtente.toLowerCase();
+// var newUtente = cognomeUtente.toUpperCase();
 console.log('Il cognome inserito è ' + cognomeUtente);
 
 // inseriscilo in un array con altri cognomi
-// listaCognomi.push(cognomeUtente);
-listaCognomi.unshift(cognomeUtente);
+// listaCognomi.unshift(cognomeUtente);
+listaCognomi.push(cognomeUtente);
 console.log(listaCognomi);
 
 // stampa la lista ordinata alfabeticamente.
-//credevo che non ordinasse ma invece è case sensitive quindi se non metto la prima maiuscola me lo inserisce alla fine o all'inizio
+//prompt è case sensitive quindi se non metto la prima maiuscola me lo inserisce alla fine o all'inizio
 //dovrei convertire sia listaCognomi che cognomeUtente in maiuscolo con .toUpperCase()
-listaCognomi.sort();
-console.log(listaCognomi);
+var listSorted = listaCognomi.sort();
+console.log(listSorted);
 
-// Scrivi anche la posizione della lista in cui  il nuovo utente si trova.
-var posizione = false;
+// Scrivi la posizione della lista in cui  il nuovo utente si trova
+/*
+confronto nomeUtente con posizione
+se è verificato --> stampo posizione
+se è falso --> continuo controllo --> posizione = posizione + 1 e riparto
+*/
+// console.log(listSorted.findIndex(cognomeUtente));
+
 var i = 0;
 do {
-    if (listaCognomi[i] == cognomeUtente) {
-        posizione = true;
+    if (listSorted[i] == cognomeUtente) {
     }
-    i ++;
-} while (i < listaCognomi.lenght && listaCognomi[i] == cognomeUtente);
+    i++;
+} while (listSorted[i] != cognomeUtente);
 
-var posizione = [i] + 1
-console.log('Sei al numero ' + posizione + ' della lista');
+console.log('Sei al numero ' + (i +1) + ' della lista');
