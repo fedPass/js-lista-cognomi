@@ -5,7 +5,9 @@ var listaCognomi = ['Agrigento','Trapani','Palermo','Caltanissetta'];
 console.log(listaCognomi);
 // Chiedi all’utente il cognome
 var cognomeUtente = prompt('Inserisci il tuo cognome (es. Rossi):');
-// var newUtente = cognomeUtente.toUpperCase();
+var iniziale = cognomeUtente.charAt(0).toUpperCase();
+var restoCognome = cognomeUtente.slice(1);
+cognomeUtente = iniziale + restoCognome;
 console.log('Il cognome inserito è ' + cognomeUtente);
 
 // inseriscilo in un array con altri cognomi
@@ -25,7 +27,8 @@ confronto nomeUtente con posizione
 se è verificato --> stampo posizione
 se è falso --> continuo controllo --> posizione = posizione + 1 e riparto
 */
-// console.log(listSorted.findIndex(cognomeUtente));
+// var posizione = listSorted.indexOf(cognomeUtente) +1;
+// console.log(posizione);
 
 var i = 0;
 do {
